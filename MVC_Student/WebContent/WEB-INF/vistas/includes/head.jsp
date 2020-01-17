@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,8 @@
 
 <base href="${pageContext.request.contextPath}/" />
 
+<!-- Mi Css -->
+<link rel="styleheet" href="css/estilos.css" />
 <!-- Bootstrap 4 -->
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <!-- DataTables con aspecto Bootstrap 4 -->
