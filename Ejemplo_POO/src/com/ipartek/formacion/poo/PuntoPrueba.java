@@ -9,7 +9,7 @@ public class PuntoPrueba {
 		try {
 			p.setX(valorX);
 		} catch (PuntoException e) {
-			System.out.println("Me has pasado un número negativo para la X y no es válido");
+			System.out.println("Me has pasado un nÃºmero negativo para la X y no es vÃ¡lido");
 			System.out.println("Lo dejo a 1");
 			p.setX(1);
 		}
