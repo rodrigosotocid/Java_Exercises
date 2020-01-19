@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+
+.icono-tabla-male {
+	font-size: 3em;
+	color: #576C73;
+}
+
+.icono-tabla-female {
+	font-size: 3em;
+	color: #957467;
+}
+
+.icono-card-male{
+	font-size:10em;
+	color: #576C73;
+}
+.icono-card-female{
+	font-size:10em;
+	color: #957467;
+}
+
+.footer a{
+	color: white;
+}
+
+.redes-sociales {
+	font-size: 2em;
+	padding-top: 10px;
+}
+
