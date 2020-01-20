@@ -2,13 +2,17 @@ package com.istikis.controladores;
 
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.istikis.modelos.Student;
 import com.istikis.repositorios.Dao;
@@ -44,9 +48,55 @@ public class AdminStudentController extends HttpServlet {
 		String id = request.getParameter("id");
 		String nombre = request.getParameter("nombre");
 		String apellidos = request.getParameter("apellidos");
-		String sexo = request.getParameter("sexo");
-		//Date fecha = request.getParameter());
+		String sexo = request.getParameter("sexo");		
+		String fecha = request.getParameter("fecha");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
+		Student student = null;
+//		response.getWriter().println(id);
+//		response.getWriter().println(op);	
+//	    response.getWriter().println(nombre);
+//		response.getWriter().println(apellidos);
+//		response.getWriter().println(sexo);
+//		response.getWriter().println(fecha);
+		
+		switch (op) {
+		case "addStudent":
+			
+			try {
+				student = new Student(nombre, apellidos, sexo, sdf.parse(fecha));
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}
+		
+			if(student.isCorrecto()) {
+				dao.addStudent(student);
+			}
+			break;
+		case "updateStudent":
+			try {
+				student = new Student(Long.parseLong(id),nombre, apellidos, sexo, sdf.parse(fecha));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			if(student.isCorrecto()) {
+				dao.updateStudent(student);
+			}
+		break;
+
+		default:
+			throw new RuntimeException("Operación no reconocida");
+		}
+		
+		if(student.isCorrecto()) {
+			HttpSession session = request.getSession();
+			session.setAttribute("alertatexto", "La operación " + op + " se ha realizado correctamente");
+			session.setAttribute("alertanivel", "success");
+			response.sendRedirect(request.getContextPath() + "/admin/index");
+		}
 	}
 
 }

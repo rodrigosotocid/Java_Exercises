@@ -32,7 +32,7 @@
 					</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${student.fechaNacimiento}" /></td>
 					<td>
-						<a class="btn btn-secondary" href="admin/student?id=${student.id}&op=modificar">Modificar</a>
+						<a class="btn btn-secondary" href="admin/student?id=${student.id}&op=updateStudent">Modificar</a>
 						<a class="btn btn-danger" href="admin/borrar?id=${student.id}">Borrar</a>
 					</td>
 				</tr>
@@ -40,7 +40,7 @@
 		</tbody>
 	</table>
 	
-	<a class="btn btn-primary mb-2" href="admin/video?op=agregar">Añadir</a>
+	<a class="btn btn-primary mb-2" href="admin/student?op=addStudent">Añadir</a>
 </section>
 
 

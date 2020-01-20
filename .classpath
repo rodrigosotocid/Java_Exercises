@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Acceso_Datos_Cliente/src"/>
+	<classpathentry kind="src" path="Acceso_Datos_Cliente1.1/src"/>
+	<classpathentry kind="src" path="Capa_Acceso_Datos_(Persona)/src"/>
+	<classpathentry kind="src" path="Capa_Acceso_Datos/src"/>
+	<classpathentry kind="src" path="Ejemplo_Acceso_Datos_(Persona)/src"/>
+	<classpathentry kind="src" path="Ejemplo_Acceso_Datos/src"/>
+	<classpathentry kind="src" path="Ejemplo_POO/src"/>
+	<classpathentry kind="src" path="Ejemplos_Basicos/src"/>
+	<classpathentry kind="src" path="Ejercicios_Básicos_Diciembre/src"/>
+	<classpathentry kind="src" path="Ejercicios_Varios/src"/>
+	<classpathentry kind="src" path="MVC_JSP_Servlet/src"/>
+	<classpathentry kind="src" path="MVC_Student/src"/>
+	<classpathentry kind="src" path="Primeros_Pasos_JSP/src"/>
+	<classpathentry kind="src" path="Primeros_Pasos/src"/>
+	<classpathentry kind="src" path="StudentMVC/src"/>
+	<classpathentry kind="lib" path="MVC_JSP_Servlet/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="MVC_Student/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="StudentMVC/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="output" path="Acceso_Datos_Cliente/bin"/>
+</classpath>

@@ -14,7 +14,8 @@ public class Student {
 	private boolean correcto = true;
 	private String errorNombre, errorApellidos;
 
-	public Student() {
+	public Student(String nombre, String apellidos, String sexo, Date fechaNacimiento) {
+		this(null,nombre, apellidos, sexo,fechaNacimiento);
 	}
 
 	public Student(Long id, String nombre, String apellidos, String sexo, Date fechaNacimiento) {
@@ -103,6 +104,7 @@ public class Student {
 	}
 
 	public void setErrorApellidos(String errorApellidos) {
+		correcto = false;
 		this.errorApellidos = errorApellidos;
 	}
 
