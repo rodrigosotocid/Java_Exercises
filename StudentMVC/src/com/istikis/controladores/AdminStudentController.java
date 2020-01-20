@@ -96,6 +96,13 @@ public class AdminStudentController extends HttpServlet {
 			session.setAttribute("alertatexto", "La operación " + op + " se ha realizado correctamente");
 			session.setAttribute("alertanivel", "success");
 			response.sendRedirect(request.getContextPath() + "/admin/index");
+		}else {
+			request.setAttribute("alertatexto", "Hay un error en el formulario. Revise los datos.");
+			request.setAttribute("alertanivel", "danger");
+			request.setAttribute("primeravez", false);
+			request.setAttribute("op", op);
+			request.setAttribute("student", student);
+			request.getRequestDispatcher(STUDENT_JSP).forward(request, response);
 		}
 	}
 
