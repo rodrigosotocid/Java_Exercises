@@ -14,7 +14,13 @@ import javax.servlet.http.HttpServletMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Servlet Filter implementation class JspFilter
+ * YA QUE NO SE PUEDE ACCEDER A WEB-INF 
+ * SE CREA PARA HACER UN PUENTE
+ * LO PONGO Y PUEDO VISUALIZAR SIN UNA SERVLET
+ * TRUCO REDIRECCION A LAS JSP's
+ * VALE PARA CUALQUIER RUTA QUE ESTÉ EN "/VISTAS/"
+ * PREVISUALIZA UNA JSP A TRAVES DE SU URL
+ * ASÍ VEO SI LAS PANTALLAS O VISTAS QUE ESTY HACIENDO VAN BIEN (BIEN PARA DESARROLLO Y MAL PARA PRODUCCIÓN)
  */
 @WebFilter(dispatcherTypes = { 
 				DispatcherType.REQUEST, 
