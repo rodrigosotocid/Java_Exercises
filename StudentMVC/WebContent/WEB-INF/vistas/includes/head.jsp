@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -6,46 +7,55 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>MVC</title>
 
 <base href="${pageContext.request.contextPath}/" />
 
-<!-- Bootstrap 4 -->
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-
 <!-- DataTables con aspecto Bootstrap 4 -->
 <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+<!-- Bootstrap 4 -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
 
 <!-- Font Awesome -->
 <!-- <link rel="stylesheet" href="css/all.min.css" /> -->
 
-<!-- My CSS -->
-<link rel="stylesheet" href="css/estilos.css" />
-
-<!-- DataTables -->
-<!-- <script src="js/jquery.dataTables.min.js"></script> -->
-<script src="js/dataTables.bootstrap4.min.js"></script>
-<script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 <!-- jQuery -->
 <script src="js/jquery-3.4.1.min.js"></script>
+<!-- DataTables -->
+<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+
+<!-- <script	src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
+
+<!-- My CSS -->
+<link rel="stylesheet" href="css/estilos.css" />
 
 <!-- Bootstrap -->
 <script src="js/bootstrap.bundle.min.js"></script>
 
+
+	
+
+
 <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/d4a3f3b590.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d4a3f3b590.js"	crossorigin="anonymous"></script>
 
 <script>
-	$(document).ready(function() {
-		$('.table').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-            }
-        } );
-	});
+	$(document)
+			.ready(
+					function() {
+						$('.table')
+								.DataTable(
+										{
+											"language" : {
+												"url" : "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+											}
+										});
+					});
 </script>
 
 </head>
@@ -88,7 +98,7 @@
 
 		</div>
 	</nav>
-	
+
 	<!-- Alerta -->
 	<c:if test="${alertatexto != null}">
 		<div class="alert alert-${alertanivel} alert-dismissible fade show"
@@ -102,9 +112,9 @@
 
 		<%
 			session.removeAttribute("alertatexto");
-			session.removeAttribute("alertanivel");
+				session.removeAttribute("alertanivel");
 		%>
 	</c:if>
-	
+
 	<!-- Main -->
 	<main class="container-fluid">
