@@ -14,13 +14,11 @@ import javax.servlet.http.HttpServletMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * YA QUE NO SE PUEDE ACCEDER A WEB-INF 
- * SE CREA PARA HACER UN PUENTE
+ * YA QUE NO SE PUEDE ACCEDER A WEB-INF SIN SERVLET, SE CREA ESTE FILTRO PARA HACER UN PUENTE
  * LO PONGO Y PUEDO VISUALIZAR SIN UNA SERVLET
- * TRUCO REDIRECCION A LAS JSP's
- * VALE PARA CUALQUIER RUTA QUE ESTÉ EN "/VISTAS/"
+ * TRUCO REDIRECCION A LAS JSP's, VALE PARA CUALQUIER RUTA QUE ESTÉ EN "/VISTAS/"
  * PREVISUALIZA UNA JSP A TRAVES DE SU URL
- * ASÍ VEO SI LAS PANTALLAS O VISTAS QUE ESTY HACIENDO VAN BIEN (BIEN PARA DESARROLLO Y MAL PARA PRODUCCIÓN)
+ * ASÍ VEO SI LAS PANTALLAS O VISTAS QUE ESTOY HACIENDO VAN BIEN (BIEN PARA DESARROLLO Y MAL PARA PRODUCCIÓN)
  */
 @WebFilter(dispatcherTypes = { 
 				DispatcherType.REQUEST, 
@@ -33,14 +31,9 @@ public class JspFilter implements Filter {
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// place your code here
-		request.getRequestDispatcher("/WEB-INF/" + ((HttpServletRequest)request).getRequestURI().replace("/StudentMVC/",  "")).forward(request, response);
-		// pasar la solicitud de largo de la cadena de filtro
-		//chain.doFilter(request, response);
+		HttpServletRequest req = (HttpServletRequest)request;
+		request.getRequestDispatcher(req.getRequestURI().replace(req.getContextPath(),  "/WEB-INF")).forward(request, response);
 	}
-
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
