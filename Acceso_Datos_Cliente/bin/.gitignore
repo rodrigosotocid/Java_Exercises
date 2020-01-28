@@ -1,9 +1,3 @@
-/EjerciciosCondicionales/
-/EjerciciosIteradores/
-/accesodatos/
-/com/
-/entidades/
-/presentacion/
 /Acceso_aplicacion.class
 /Adivina_Numero.class
 /Areas.class
@@ -14,11 +8,12 @@
 /DeclaracionesOperadores.class
 /Ejemplo_Array_2D.class
 /Ejercicios.class
+/EjerciciosCondicionales/
+/EjerciciosIteradores/
 /Ejercicios_01.class
 /EntradaNumeros.class
 /Entrada_ejemplo1.class
 /Entrada_ejemplo2.class
-/poo/
 /Factorial.class
 /ManipulaCadenas.class
 /ManipulaCadenas2.class
@@ -31,3 +26,8 @@
 /Uso_Bucle_For.class
 /Uso_Tallas$Talla.class
 /Uso_Tallas.class
+/accesodatos/
+/com/
+/entidades/
+/poo/
+/presentacion/
