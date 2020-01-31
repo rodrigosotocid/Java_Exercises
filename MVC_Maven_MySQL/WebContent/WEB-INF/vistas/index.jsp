@@ -2,7 +2,7 @@
 
 <%@ include file="/WEB-INF/vistas/layout/head.jsp" %>
 
-<header class="jumbotron d-flex justify-content-center">
+<header class="jumbotron d-flex justify-content-center mt-2 mb-2">
 	<h2 class="display-6">Bienvenidos al EjemploMVC con Maven!</h2>
 </header>
 
