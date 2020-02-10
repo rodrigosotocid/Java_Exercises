@@ -4,7 +4,7 @@
 
 <section  class="container mt-3" id="masaje">
 
-	<table
+<%-- 	<table
 		class="table table-striped table-bordered table-hover table-sm table-responsive">
 		<thead>
 			<tr>
@@ -29,7 +29,9 @@
 		</tbody>
 	</table>
 
-	<a class="btn btn-primary" href="admin/video?op=agregar">Añadir</a>
+	<a class="btn btn-primary" href="admin/video?op=agregar">Añadir</a> --%>
+	
+	<h1>index admin</h1>
 
 </section>
 
