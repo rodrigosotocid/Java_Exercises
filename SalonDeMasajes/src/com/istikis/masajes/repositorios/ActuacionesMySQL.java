@@ -81,16 +81,9 @@ public class ActuacionesMySQL implements Dao<Actuaciones>{
 				try(ResultSet rs = ps.executeQuery()){
 					ArrayList<Actuaciones> actuaciones = new ArrayList<>();
 					
-//					while(rs.next()) {
-//						actuaciones.add(new Actuaciones(
-//								rs.getLong("idCliente"), 
-//								rs.getObject("idTrabajador"), 
-//								rs.getObject("idServicio"), 
-//								rs.getDate("fecha"), 
-//								rs.getString("resena"), 
-//								rs.getString("calificacion")
-//								));
-//					}
+					while(rs.next()) {
+//						actuaciones.add(new Actuaciones(rs.);
+					}
 					
 					return actuaciones;
 				}

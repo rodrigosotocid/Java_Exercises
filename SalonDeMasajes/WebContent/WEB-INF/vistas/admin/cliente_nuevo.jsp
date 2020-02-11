@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ include file="/WEB-INF/vistas/layout/head.jsp"%>
+<%@ include file="/WEB-INF/vistas/layout/head.jsp" %>
+
 <section class="container mt-3">
 	<div class="row d-flex align-content-center">
 		<div class="col col-sm-8 offset-2">
@@ -76,5 +76,4 @@
 	</div>
 </section>
 
-
-<%@ include file="/WEB-INF/vistas/layout/footer.jsp"%>
+<%@ include file="/WEB-INF/vistas/layout/footer.jsp" %>

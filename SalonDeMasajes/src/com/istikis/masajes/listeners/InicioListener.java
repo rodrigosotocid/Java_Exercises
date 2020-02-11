@@ -19,6 +19,8 @@ public class InicioListener implements ServletContextListener {
     	
         FabricaDao fabricaDao = FabricaDao.getInstancia(pathConfiguracion);
     	
-        Globales.dao = fabricaDao.getInstanciaActuaciones();
+        Globales.daoActuaciones = fabricaDao.getInstanciaActuaciones();
+        
+        Globales.daoCliente = fabricaDao.getInstanciaCliente();
     }	
 }

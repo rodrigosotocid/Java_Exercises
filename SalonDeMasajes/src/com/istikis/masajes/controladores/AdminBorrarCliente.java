@@ -7,17 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/index")
-public class IndexController extends HttpServlet {
+@WebServlet("/admin/borrar")
+public class AdminBorrarCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("clientes", Globales.daoCliente.obtenerTodos());
-		request.setAttribute("actuaciones", Globales.daoActuaciones.obtenerTodos());
-		request.getRequestDispatcher("/WEB-INF/vistas/index.jsp").forward(request, response);
+	
+		String id = request.getParameter("id");
+		
+		Globales.daoCliente.borrar(Long.parseLong(id));
+		
+		response.sendRedirect(request.getContextPath() + "/admin/cliente");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
+
 }

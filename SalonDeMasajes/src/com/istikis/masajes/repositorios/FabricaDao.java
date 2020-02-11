@@ -7,6 +7,7 @@ import java.util.Properties;
 import com.istikis.masajes.repositorios.AccesoDatosException;
 import com.istikis.masajes.repositorios.ActuacionesMySQL;
 import com.istikis.masajes.modelo.Actuaciones;
+import com.istikis.masajes.modelo.Cliente;
 
 public class FabricaDao {
 	
@@ -40,9 +41,20 @@ public class FabricaDao {
 	//FIN SINGLETON
 	
 	public Dao<Actuaciones> getInstanciaActuaciones() {
-		if(tipo == "mysql") {
+		if("mysql".equals(tipo)) {
 			
 		   return ActuacionesMySQL.getInstancia(pathConfiguracion);
+		
+		}else {
+			throw new AccesoDatosException("No se reconoce el tipo " + tipo);
+		}
+		
+	}
+	
+	public Dao<Cliente> getInstanciaCliente() {
+		if("mysql".equals(tipo)) {
+			
+		   return ClienteMySQL.getInstancia(pathConfiguracion);
 		
 		}else {
 			throw new AccesoDatosException("No se reconoce el tipo " + tipo);

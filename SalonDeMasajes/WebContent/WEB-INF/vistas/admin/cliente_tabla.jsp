@@ -24,7 +24,7 @@
 					<td>${cliente.nombre}</td>
 					<td>${cliente.apellidos}</td>
 					<td></td>
-					<td><a class="btn btn-warning" href="admin/video?id=${cliente.idCliente}&op=modificar">Modificar</a> <a
+					<td><a class="btn btn-warning" href="admin/cliente?id=${cliente.idCliente}&op=modificar">Modificar</a> <a
 						class="btn btn-danger" href="admin/borrar?id=${cliente.idCliente}">Borrar</a></td>
 				</tr>
 			</c:forEach>

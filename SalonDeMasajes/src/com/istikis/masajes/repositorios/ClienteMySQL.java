@@ -77,7 +77,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 					
 					while(rs.next()) {
 						clientes.add(new Cliente(
-								rs.getLong("idCliente"), 
+								rs.getLong("idclientes"), 
 								rs.getString("nombre"), 
 								rs.getString("apellidos"),
 								rs.getString("dni")

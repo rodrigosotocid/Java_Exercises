@@ -20,7 +20,7 @@ public class JspFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-
+		
 		HttpServletRequest req = (HttpServletRequest) request;
 		request.getRequestDispatcher(req.getRequestURI().replace(req.getContextPath(), "/WEB-INF")).forward(request,
 				response);
