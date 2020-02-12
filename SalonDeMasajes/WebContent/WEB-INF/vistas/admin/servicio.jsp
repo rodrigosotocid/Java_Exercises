@@ -20,7 +20,7 @@
 				<tr>
 					<th>${servicio.id}</th>
 					<td>${servicio.nombre}</td>
-					<td>${servicio.precio} €</td>
+					<td> <fmt:formatNumber value = "${servicio.precio}" type = "currency"/></td>
 					<td><a class="btn btn-warning" href="admin/add_servicio?id=${servicio.id}&op=modificar">Modificar</a> <a
 						class="btn btn-danger" href="admin/borrarservicio?id=${servicio.id}">Borrar</a></td>
 				</tr>
