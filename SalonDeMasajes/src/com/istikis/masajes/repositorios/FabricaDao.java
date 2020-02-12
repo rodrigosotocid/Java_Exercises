@@ -8,6 +8,8 @@ import com.istikis.masajes.repositorios.AccesoDatosException;
 import com.istikis.masajes.repositorios.ActuacionesMySQL;
 import com.istikis.masajes.modelo.Actuaciones;
 import com.istikis.masajes.modelo.Cliente;
+import com.istikis.masajes.modelo.Servicio;
+import com.istikis.masajes.modelo.Trabajador;
 
 public class FabricaDao {
 	
@@ -62,6 +64,25 @@ public class FabricaDao {
 		
 	}
 	
+	public Dao<Trabajador> getInstanciaTrabajador() {
+		if("mysql".equals(tipo)) {
+			
+		   return TrabajadorMySQL.getInstancia(pathConfiguracion);
+		
+		}else {
+			throw new AccesoDatosException("No se reconoce el tipo " + tipo);
+		}
+		
+	}
 	
-
+	public Dao<Servicio> getInstanciaServicio() {
+		if("mysql".equals(tipo)) {
+			
+		   return ServicioMySQL.getInstancia(pathConfiguracion);
+		
+		}else {
+			throw new AccesoDatosException("No se reconoce el tipo " + tipo);
+		}
+		
+	}
 }

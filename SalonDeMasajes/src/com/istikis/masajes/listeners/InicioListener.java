@@ -8,7 +8,6 @@ import com.istikis.masajes.controladores.Globales;
 import com.istikis.masajes.repositorios.FabricaDao;
 
 
-
 @WebListener
 public class InicioListener implements ServletContextListener {
 	
@@ -22,5 +21,9 @@ public class InicioListener implements ServletContextListener {
         Globales.daoActuaciones = fabricaDao.getInstanciaActuaciones();
         
         Globales.daoCliente = fabricaDao.getInstanciaCliente();
+        
+        Globales.daoTrabajador = fabricaDao.getInstanciaTrabajador();
+        
+        Globales.daoServicio = fabricaDao.getInstanciaServicio();
     }	
 }

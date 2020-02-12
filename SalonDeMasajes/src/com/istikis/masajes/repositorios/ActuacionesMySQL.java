@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import com.istikis.masajes.repositorios.AccesoDatosException;
+import com.istikis.masajes.controladores.Globales;
 import com.istikis.masajes.modelo.Actuaciones;
 
 public class ActuacionesMySQL implements Dao<Actuaciones>{
@@ -79,10 +80,11 @@ public class ActuacionesMySQL implements Dao<Actuaciones>{
 		try (Connection con = getConexion()) {
 			try(PreparedStatement ps = con.prepareStatement(SQL_SELECT)) {
 				try(ResultSet rs = ps.executeQuery()){
+					
 					ArrayList<Actuaciones> actuaciones = new ArrayList<>();
 					
 					while(rs.next()) {
-//						actuaciones.add(new Actuaciones(rs.);
+						//actuaciones.add(new Actuaciones(Actuaciones cliente = new Actuaciones(););
 					}
 					
 					return actuaciones;
@@ -153,8 +155,21 @@ public Actuaciones obtenerPorId(Long id) {
 
 	@Override
 	public void borrar(Long id) {
-		// TODO Auto-generated method stub
 		
+		try (Connection con = getConexion()) {
+			try(PreparedStatement ps = con.prepareStatement(SQL_DELETE)) {
+				
+				ps.setLong(1, id);
+				
+				int numeroRegistrosModificados = ps.executeUpdate();
+				
+				if(numeroRegistrosModificados != 1) {
+					throw new AccesoDatosException("Se ha hecho más o menos de una delete");
+				}
+			}
+		} catch (SQLException e) {
+			throw new AccesoDatosException("Error al borrar el sesión", e);
+		}
 	}
 
 	

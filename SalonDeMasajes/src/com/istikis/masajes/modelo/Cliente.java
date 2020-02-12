@@ -17,6 +17,10 @@ public class Cliente {
 	public Cliente() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Cliente(String nombre, String apellidos, String dni) {
+		this(null, nombre, apellidos, dni);
+	}
 
 	public Long getIdCliente() {
 		return idCliente;

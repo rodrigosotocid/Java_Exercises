@@ -17,9 +17,9 @@ import com.istikis.masajes.modelo.Cliente;
 public class ClienteMySQL implements Dao<Cliente>{
 	
 	private static final String SQL_SELECT = "SELECT * FROM clientes";
-	private static final String SQL_SELECT_BY_ID = "SELECT * FROM clientes WHERE id=?";
+	private static final String SQL_SELECT_BY_ID = "SELECT * FROM clientes WHERE idclientes=?";
 
-	private static final String SQL_INSERT = "INSERT INTO clientes (nombre, apellidos, dni) VALUES (?,?)";
+	private static final String SQL_INSERT = "INSERT INTO clientes (nombre, apellidos, dni) VALUES (?,?,?)";
 	private static final String SQL_UPDATE = "UPDATE clientes SET nombre=?, apellidos=?, dni=? WHERE idclientes=?";
 	private static final String SQL_DELETE = "DELETE FROM clientes WHERE idclientes=?";
 
@@ -103,7 +103,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 									
 					if(rs.next()) {
 						return new Cliente(
-								rs.getLong("idCliente"), 
+								rs.getLong("idclientes"), 
 								rs.getString("nombre"), 
 								rs.getString("apellidos"),
 								rs.getString("dni")
@@ -114,7 +114,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 				}
 			}
 		} catch (SQLException e) {
-			throw new AccesoDatosException("Error al obtener el video id: " + id, e);
+			throw new AccesoDatosException("Error al obtener el Cliente id: " + id, e);
 		}
 	}
 
@@ -146,6 +146,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 				ps.setString(1, cliente.getNombre());
 				ps.setString(2, cliente.getApellidos());
 				ps.setString(3, cliente.getDni());
+				ps.setLong(4, cliente.getIdCliente());
 				
 				int numeroRegistrosModificados = ps.executeUpdate();
 				
@@ -154,7 +155,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 				}
 			}
 		} catch (SQLException e) {
-			throw new AccesoDatosException("Error al modificar el video", e);
+			throw new AccesoDatosException("Error al modificar el cliente", e);
 		}
 		
 	}
@@ -163,6 +164,7 @@ public class ClienteMySQL implements Dao<Cliente>{
 	public void borrar(Long id) {
 		try (Connection con = getConexion()) {
 			try(PreparedStatement ps = con.prepareStatement(SQL_DELETE)) {
+				
 				ps.setLong(1, id);
 				
 				int numeroRegistrosModificados = ps.executeUpdate();

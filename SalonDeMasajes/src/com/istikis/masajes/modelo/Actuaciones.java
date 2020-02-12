@@ -21,6 +21,10 @@ public class Actuaciones {
 		setCalificacion(calificacion);
 	}
 
+	public Actuaciones() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Cliente getCliente() {
 		return Cliente;
 	}

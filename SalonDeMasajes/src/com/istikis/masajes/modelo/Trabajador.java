@@ -17,6 +17,10 @@ public class Trabajador {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Trabajador(String nombre, String apellidos, String dni) {
+		this(null, nombre, apellidos, dni);
+	}
+	
 	public Long getId() {
 		return id;
 	}

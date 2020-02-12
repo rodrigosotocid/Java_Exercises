@@ -8,13 +8,18 @@ public class Servicio {
 	private BigDecimal precio;
 	
 	public Servicio(Long id, String nombre, BigDecimal precio) {
+		
 		setId(id);
 		setNombre(nombre);
 		setPrecio(precio);
 	}
 	
+	public Servicio(String nombre, BigDecimal precio) {
+		this(null,nombre, precio);
+	}
+	
 	public Servicio() {
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 	
 	public Long getId() {
